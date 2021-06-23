@@ -1,0 +1,3 @@
+[submodule "src/app/shared/typescript-library"]
+	path = src/app/shared/typescript-library
+	url = https://github.com/viniciuslucas95/typescript-library.git
