@@ -15,7 +15,12 @@
       "bundleIdentifier": "com.viniciuslucas95.valeeeu"
     },
     "android": {
-      "package": "com.viniciuslucas95.valeeeu"
+      "package": "com.viniciuslucas95.valeeeu",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyAvOEQE_f6VB8oeendmD4yLsOqGBzgDIBQ"
+        }
+      }
     }
   }
 }

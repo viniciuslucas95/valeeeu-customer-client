@@ -1,10 +1,10 @@
 import { registerRootComponent } from 'expo';
 import React from 'react';
 
-import Login from './app/pages/Login';
+import { Map } from './app/pages';
 
 export default function App() {
-  return <Login />;
+  return <Map />;
 }
 
 registerRootComponent(App);
