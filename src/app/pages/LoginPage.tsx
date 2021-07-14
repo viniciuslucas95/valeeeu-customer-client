@@ -16,7 +16,7 @@ import {
 
 WebBrowser.maybeCompleteAuthSession();
 
-export default function Login() {
+export function LoginPage() {
   const {
     isBusy: isFacebookApiBusy,
     user: facebookUser,

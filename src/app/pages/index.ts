@@ -1,2 +1,2 @@
-export { default as Map } from './Map';
-export { default as Login } from './Login';
+export { SearchPage } from './SearchPage';
+export { LoginPage } from './LoginPage';

@@ -1,10 +1,10 @@
 import { registerRootComponent } from 'expo';
 import React from 'react';
 
-import { Map } from './app/pages';
+import { SearchPage } from './app/pages';
 
 export default function App() {
-  return <Map />;
+  return <SearchPage />;
 }
 
 registerRootComponent(App);
