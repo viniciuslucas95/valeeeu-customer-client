@@ -1,2 +1,5 @@
 export { SearchPage } from './SearchPage';
-export { LoginPage } from './LoginPage';
+export { SeeWorkerProfilePage } from './SeeWorkerProfilePage';
+export { WorkPage } from './WorkPage';
+export { MessagePage } from './MessagePage';
+export { ProfilePage } from './ProfilePage';

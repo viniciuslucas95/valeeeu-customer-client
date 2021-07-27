@@ -1,0 +1,11 @@
+export { splashScreen2Svg } from './splashScreen2Svg';
+export { splashScreen3Svg } from './splashScreen3Svg';
+export { splashScreen1Svg } from './splashScreen1Svg';
+export { continueButton } from './continueButton';
+export { backButton } from './backButton';
+export { skipButton } from './skipButton';
+export { startButton } from './startButton';
+export { star } from './star';
+export { chat } from './chat';
+export { searchSvg } from './searchSvg';
+export { Logo } from './Logo';
