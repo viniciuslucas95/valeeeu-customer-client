@@ -7,10 +7,18 @@ import { theme } from '../../../configs/constants';
 interface IProps {
   thick?: boolean;
   size?: number;
+  fillColor?: string;
+  strokeColor?: string;
   props?: any;
 }
 
-export function SearchIcon({ thick, size, props }: IProps) {
+export function SearchIcon({
+  thick,
+  size,
+  fillColor: color,
+  strokeColor,
+  props,
+}: IProps) {
   const fixedSize = size ? size / 4 : vw(1) / 4;
 
   return (
@@ -26,8 +34,8 @@ export function SearchIcon({ thick, size, props }: IProps) {
         d={
           'M28.09 31.352l.353.356.355-.354 2.556-2.556.354-.355-.355-.353-9.18-9.126c1.53-2.011 1.626-4.213 1.626-6.815C23.799 5.715 18.582.5 12.149.5S.5 5.715.5 12.15c0 6.433 5.215 11.649 11.65 11.649 2.6 0 4.803-.095 6.814-1.626l9.126 9.18zM12.15 19.368a7.208 7.208 0 01-7.22-7.219 7.208 7.208 0 017.22-7.218 7.208 7.208 0 017.218 7.218 7.208 7.208 0 01-7.219 7.219z'
         }
-        fill={theme.white}
-        stroke={theme.primaryPurple}
+        fill={color ?? theme.white}
+        stroke={strokeColor ?? theme.primaryPurple}
         strokeWidth={thick ? 0 : 2}
       />
     </Svg>

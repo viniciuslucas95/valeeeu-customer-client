@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
-import { theme } from '../../../configs/constants';
+
+import { sizes, theme } from '../../../configs/constants';
 import { vhPx, vwPx } from '../../helpers/units';
 
 export const Container = styled.View`
@@ -19,7 +20,7 @@ export const SearchContainer = styled.View`
   align-items: center;
   bottom: ${vhPx(5)};
   width: ${vwPx(80)};
-  border: ${vwPx(0.25)} solid ${theme.darkGray};
+  border: ${sizes.inputBorder} solid ${theme.primaryPurple};
   border-radius: ${vwPx(10)};
   background-color: ${theme.white};
   padding: ${vwPx(2)} ${vwPx(4)};
@@ -28,12 +29,12 @@ export const SearchContainer = styled.View`
 export const Placeholder = styled.Text`
   top: ${vhPx(0.25)};
   font-family: 'Poppins-Regular';
-  color: ${theme.darkGray};
+  color: ${theme.mediumGray};
   font-size: ${vwPx(4.5)};
 `;
 
 export const SeparatorContainer = styled.View`
-  left: ${vwPx(7.5)};
+  left: ${vwPx(10)};
 `;
 
 export const IconContainer = styled.View`

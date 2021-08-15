@@ -14,7 +14,6 @@ import {
   SearchIcon,
   WorkIcon,
 } from '../../../assets/svgs/icons';
-import { vh } from '../../helpers/units';
 
 export enum TabScreens {
   Search = 'Search Stack',
@@ -51,21 +50,13 @@ export function TabNavigator() {
       })}
     >
       <Tab.Screen name={TabScreens.Search} component={SearchStackNavigator} />
-      <Tab.Screen
-        name={TabScreens.Work}
-        component={WorkStackNavigator}
-        options={{ tabBarLabel: '' }}
-      />
+      <Tab.Screen name={TabScreens.Work} component={WorkStackNavigator} />
       <Tab.Screen
         name={TabScreens.Message}
         component={MessageStackNavigator}
-        options={{ tabBarBadge: 3, tabBarLabel: '' }}
+        options={{ tabBarBadge: 3 }}
       />
-      <Tab.Screen
-        name={TabScreens.Profile}
-        component={ProfileStackNavigator}
-        options={{ tabBarLabel: '' }}
-      />
+      <Tab.Screen name={TabScreens.Profile} component={ProfileStackNavigator} />
     </Tab.Navigator>
   );
 }

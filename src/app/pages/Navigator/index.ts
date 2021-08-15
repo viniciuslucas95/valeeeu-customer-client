@@ -1,1 +1,2 @@
-export { TabNavigator as Navigator, TabScreens } from './TabNavigator';
+export { TabScreens, StackScreens } from './enums';
+export { TabNavigator as Navigator } from './TabNavigator';

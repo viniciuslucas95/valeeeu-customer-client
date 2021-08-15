@@ -9,3 +9,4 @@ export { star } from './star';
 export { chat } from './chat';
 export { searchSvg } from './searchSvg';
 export { Logo } from './Logo';
+export { CheckBox } from './CheckBox';
