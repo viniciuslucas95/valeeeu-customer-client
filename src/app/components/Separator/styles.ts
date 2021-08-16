@@ -1,17 +1,17 @@
 import styled from 'styled-components/native';
 
-import { theme } from '../../../configs/constants';
+import { sizes, theme } from '../../../configs/constants';
 import { vhPx, vwPx } from '../../helpers/units';
 
 export const Container = styled.View`
-  width: ${vwPx(70)};
+  width: ${sizes.elementMaxWidth};
   flex-direction: row;
   align-items: center;
 `;
 
 export const Line = styled.View`
   background-color: ${theme.primaryPurple};
-  height: ${vhPx(0.1)};
+  height: 1px;
   flex: 1;
 `;
 

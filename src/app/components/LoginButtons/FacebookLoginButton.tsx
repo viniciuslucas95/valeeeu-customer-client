@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import {
   TouchableContainer,
@@ -9,11 +9,33 @@ import {
   ButtonContainer,
 } from './styles';
 import { FacebookIcon } from '../../../assets/svgs/icons';
+import { IProps } from './interfaces';
 
-export function FacebookLoginButton(props: any) {
+export function FacebookLoginButton({
+  isFetchingData,
+  isPlataformFetchingData,
+  fetchDataAsync,
+  style,
+}: IProps) {
+  const [isPressed, setIsPressed] = useState(false);
+
   return (
-    <TouchableContainer>
-      <ButtonContainer {...props} plataform={Plataform.Facebook}>
+    <TouchableContainer
+      onPressIn={() => {
+        if (!isFetchingData) setIsPressed(true);
+      }}
+      onPressOut={() => setIsPressed(false)}
+      onPress={() => {
+        if (isFetchingData) return;
+
+        fetchDataAsync();
+      }}
+    >
+      <ButtonContainer
+        {...style}
+        plataform={Plataform.Facebook}
+        highlight={isPressed || isPlataformFetchingData}
+      >
         <IconContainer>
           <FacebookIcon />
         </IconContainer>

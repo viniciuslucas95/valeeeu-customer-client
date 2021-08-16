@@ -4,9 +4,9 @@ import { theme, sizes } from '../../../configs/constants';
 import { vhPx, vwPx } from '../../helpers/units';
 
 export const Container = styled.TextInput`
-  width: ${vwPx(70)};
-  height: ${vhPx(6.5)};
-  border: ${sizes.inputBorder} solid ${theme.primaryPurple};
+  width: ${sizes.elementMaxWidth};
+  height: ${sizes.elementHeight};
+  border: ${sizes.border} solid ${theme.primaryPurple};
   border-radius: ${vwPx(10)};
   background-color: ${theme.white};
   padding: ${vhPx(1)} ${vwPx(4)} ${vhPx(0.5)} ${vwPx(4)};

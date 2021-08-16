@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import {
   TouchableContainer,
@@ -9,11 +9,33 @@ import {
   ButtonContainer,
 } from './styles';
 import { GoogleIcon } from '../../../assets/svgs/icons';
+import { IProps } from './interfaces';
 
-export function GoogleLoginButton(props: any) {
+export function GoogleLoginButton({
+  isFetchingData,
+  isPlataformFetchingData,
+  fetchDataAsync,
+  style,
+}: IProps) {
+  const [isPressed, setIsPressed] = useState(false);
+
   return (
-    <TouchableContainer>
-      <ButtonContainer {...props} plataform={Plataform.Google}>
+    <TouchableContainer
+      onPressIn={() => {
+        if (!isFetchingData) setIsPressed(true);
+      }}
+      onPressOut={() => setIsPressed(false)}
+      onPress={() => {
+        if (isFetchingData) return;
+
+        fetchDataAsync();
+      }}
+    >
+      <ButtonContainer
+        {...style}
+        plataform={Plataform.Google}
+        highlight={isPressed || isPlataformFetchingData}
+      >
         <IconContainer>
           <GoogleIcon />
         </IconContainer>

@@ -1,7 +1,6 @@
 import styled from 'styled-components/native';
 
-import { theme } from '../../../configs/constants';
-import { vwPx } from '../../helpers/units';
+import { sizes, theme } from '../../../configs/constants';
 
 export const Container = styled.View`
   flex: 1;
@@ -13,5 +12,5 @@ export const Container = styled.View`
 export const CheckBoxAndRecoverContainer = styled.View`
   flex-direction: row;
   justify-content: space-between;
-  width: ${vwPx(70)};
+  width: ${sizes.elementMaxWidth};
 `;

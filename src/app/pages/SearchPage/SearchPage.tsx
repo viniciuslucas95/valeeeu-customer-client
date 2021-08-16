@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 
-import { GoogleMaps } from '../../shared/typescript-library/components';
-import { googleApiKey } from '../../../configs/constants/apiConfigs';
 import {
   Container,
   SearchContainer,
@@ -11,33 +9,33 @@ import {
   TouchableContainer,
 } from './styles';
 import { vw, vwPx } from '../../helpers/units';
-import { theme } from '../../../configs/constants';
+import { sizes, theme } from '../../../configs/constants';
 import { Rect, Svg } from 'react-native-svg';
 import { SearchIcon } from '../../../assets/svgs/icons';
 import { TabScreens } from '../Navigator/enums';
-
-const searchIconSize = vw(2.5);
+import { apiConfig } from '../../../configs/constants';
+import { GoogleMaps } from '../../shared/typescript-library/components';
+import { mapContext } from '../../contexts';
 
 export function SearchPage({ navigation }: any) {
-  // FOR TESTING
-  const [destination, setDestination] = useState({
-    latitude: -22.6088,
-    longitude: -43.1723,
-  });
+  const { setIsLoaded } = useContext(mapContext);
 
   return (
     <Container>
-      <GoogleMaps apiKey={googleApiKey} />
+      <GoogleMaps
+        apiKey={apiConfig.googleApiKey}
+        mapLoadCallback={() => setIsLoaded(true)}
+      />
       <TouchableContainer onPress={() => navigation.navigate(TabScreens.Work)}>
         <SearchContainer>
           <Placeholder>Buscar serviço...</Placeholder>
           <SeparatorContainer>
-            <Svg width={vwPx(0.5)} height='100%'>
+            <Svg width={sizes.border} height='100%'>
               <Rect
-                width={vwPx(0.25)}
+                width={sizes.border}
                 height='100%'
                 fill={theme.primaryPurple}
-                rx={vwPx(0.5)}
+                rx={sizes.border}
               />
             </Svg>
           </SeparatorContainer>

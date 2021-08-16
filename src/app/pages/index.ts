@@ -3,3 +3,4 @@ export { SeeWorkerProfilePage } from './SeeWorkerProfilePage';
 export { WorkPage } from './WorkPage';
 export { MessagePage } from './MessagePage';
 export { ProfilePage } from './ProfilePage';
+export { LoadingPage } from './LoadingPage';

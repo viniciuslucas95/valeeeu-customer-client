@@ -1,6 +1,7 @@
 import styled from 'styled-components/native';
-import { theme } from '../../../configs/constants';
-import { vhPx, vwPx } from '../../helpers/units';
+
+import { sizes, theme } from '../../../configs/constants';
+import { vwPx } from '../../helpers/units';
 
 export enum Plataform {
   Facebook,
@@ -24,10 +25,10 @@ export const ButtonContainer = styled.View<IProps>`
       ? theme.googleHighlight
       : theme.google};
   flex-direction: row;
-  width: ${vwPx(70)};
-  height: ${vhPx(6.5)};
+  width: ${sizes.elementMaxWidth};
+  height: ${sizes.elementHeight};
   border-radius: ${vwPx(10)};
-  padding: 0 ${vwPx(1.25)};
+  padding: 0 ${vwPx(1.5)};
 `;
 
 export const IconContainer = styled.View`

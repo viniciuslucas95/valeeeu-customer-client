@@ -1,5 +1,7 @@
-import { vwPx } from '../../app/helpers/units';
+import { vhPx, vwPx } from '../../app/helpers/units';
 
 export const sizes = {
-  inputBorder: vwPx(0.2),
+  border: '1px',
+  elementHeight: vhPx(6),
+  elementMaxWidth: vwPx(80),
 };

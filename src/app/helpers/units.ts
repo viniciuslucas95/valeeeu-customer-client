@@ -9,17 +9,17 @@ export function remPx(number: number) {
 }
 
 export function vw(number: number) {
-  return (number * Dimensions.get('window').width) / 100;
+  return (number * Dimensions.get('screen').width) / 100;
 }
 
 export function vwPx(number: number) {
-  return (number * Dimensions.get('window').width) / 100 + 'px';
+  return (number * Dimensions.get('screen').width) / 100 + 'px';
 }
 
 export function vh(number: number) {
-  return (number * Dimensions.get('window').height) / 100;
+  return (number * Dimensions.get('screen').height) / 100;
 }
 
 export function vhPx(number: number) {
-  return (number * Dimensions.get('window').height) / 100 + 'px';
+  return (number * Dimensions.get('screen').height) / 100 + 'px';
 }

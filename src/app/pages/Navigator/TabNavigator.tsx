@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import {
@@ -14,49 +14,53 @@ import {
   SearchIcon,
   WorkIcon,
 } from '../../../assets/svgs/icons';
-
-export enum TabScreens {
-  Search = 'Search Stack',
-  Work = 'Work Stack',
-  Message = 'Message Stack',
-  Profile = 'Profile Stack',
-}
+import { TabScreens } from './enums';
+import { LoadingPage } from '..';
+import { mapContext } from '../../contexts';
 
 const Tab = createBottomTabNavigator();
 
 export function TabNavigator() {
+  const { isLoaded } = useContext(mapContext);
+
   return (
-    <Tab.Navigator
-      tabBarOptions={{
-        activeBackgroundColor: theme.primaryPurple,
-        inactiveBackgroundColor: theme.primaryPurple,
-        showLabel: false,
-      }}
-      screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused }) => {
-          if (route.name === TabScreens.Search) {
-            return focused ? <SearchIcon thick /> : <SearchIcon />;
-          }
-          if (route.name === TabScreens.Work) {
-            return focused ? <WorkIcon thick /> : <WorkIcon />;
-          }
-          if (route.name === TabScreens.Message) {
-            return focused ? <MessageIcon thick /> : <MessageIcon />;
-          }
-          if (route.name === TabScreens.Profile) {
-            return focused ? <ProfileIcon thick /> : <ProfileIcon />;
-          }
-        },
-      })}
-    >
-      <Tab.Screen name={TabScreens.Search} component={SearchStackNavigator} />
-      <Tab.Screen name={TabScreens.Work} component={WorkStackNavigator} />
-      <Tab.Screen
-        name={TabScreens.Message}
-        component={MessageStackNavigator}
-        options={{ tabBarBadge: 3 }}
-      />
-      <Tab.Screen name={TabScreens.Profile} component={ProfileStackNavigator} />
-    </Tab.Navigator>
+    <>
+      <Tab.Navigator
+        tabBarOptions={{
+          activeBackgroundColor: theme.primaryPurple,
+          inactiveBackgroundColor: theme.primaryPurple,
+          showLabel: false,
+        }}
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused }) => {
+            if (route.name === TabScreens.Search) {
+              return focused ? <SearchIcon thick /> : <SearchIcon />;
+            }
+            if (route.name === TabScreens.Work) {
+              return focused ? <WorkIcon thick /> : <WorkIcon />;
+            }
+            if (route.name === TabScreens.Message) {
+              return focused ? <MessageIcon thick /> : <MessageIcon />;
+            }
+            if (route.name === TabScreens.Profile) {
+              return focused ? <ProfileIcon thick /> : <ProfileIcon />;
+            }
+          },
+        })}
+      >
+        <Tab.Screen name={TabScreens.Search} component={SearchStackNavigator} />
+        <Tab.Screen name={TabScreens.Work} component={WorkStackNavigator} />
+        <Tab.Screen
+          name={TabScreens.Message}
+          component={MessageStackNavigator}
+          options={{ tabBarBadge: 3 }}
+        />
+        <Tab.Screen
+          name={TabScreens.Profile}
+          component={ProfileStackNavigator}
+        />
+      </Tab.Navigator>
+      {isLoaded ? null : <LoadingPage />}
+    </>
   );
 }

@@ -3,8 +3,9 @@ import { StyleSheet, View } from 'react-native';
 
 import { theme } from '../../../configs/constants/theme';
 import { Logo } from '../../../assets/svgs';
+import { vh, vw } from '../../helpers/units';
 
-export function SplashPage() {
+export function LoadingPage() {
   return (
     <View style={styles.container}>
       <Logo />
@@ -14,7 +15,9 @@ export function SplashPage() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    position: 'absolute',
+    width: vw(100),
+    height: vh(100),
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: theme.primaryPurple,

@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 
 import { sizes, theme } from '../../../configs/constants';
-import { vhPx, vwPx } from '../../helpers/units';
+import { vh, vhPx, vwPx } from '../../helpers/units';
 
 export const Container = styled.View`
   flex: 1;
@@ -19,11 +19,12 @@ export const SearchContainer = styled.View`
   justify-content: space-between;
   align-items: center;
   bottom: ${vhPx(5)};
-  width: ${vwPx(80)};
-  border: ${sizes.inputBorder} solid ${theme.primaryPurple};
+  width: ${sizes.elementMaxWidth};
+  border: ${sizes.border} solid ${theme.primaryPurple};
   border-radius: ${vwPx(10)};
   background-color: ${theme.white};
   padding: ${vwPx(2)} ${vwPx(4)};
+  height: ${sizes.elementHeight};
 `;
 
 export const Placeholder = styled.Text`
