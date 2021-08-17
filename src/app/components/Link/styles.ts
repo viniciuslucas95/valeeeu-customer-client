@@ -12,9 +12,10 @@ export const Container = styled.View``;
 export const TouchableContainer = styled.TouchableWithoutFeedback``;
 
 export const Text = styled.Text<IProps>`
-  font-family: 'Poppins-Light';
+  font-family: ${({ highlight }) =>
+    highlight ? 'Poppins-Medium' : 'Poppins-Light'};
   color: ${({ highlight }) =>
-    highlight ? theme.purpleHighlightStronger : theme.purple};
+    highlight ? theme.purpleHighlight : theme.purple};
   font-size: ${vwPx(3.5)};
   position: relative;
   top: ${vhPx(0.15)};

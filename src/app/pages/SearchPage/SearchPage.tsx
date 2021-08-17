@@ -8,11 +8,11 @@ import {
   IconContainer,
   TouchableContainer,
 } from './styles';
-import { vw, vwPx } from '../../helpers/units';
+import { vw } from '../../helpers/units';
 import { sizes, theme } from '../../../configs/constants';
 import { Rect, Svg } from 'react-native-svg';
 import { SearchIcon } from '../../../assets/svgs/icons';
-import { TabScreens } from '../Navigator/enums';
+import { TabScreens } from '../enums';
 import { apiConfig } from '../../../configs/constants';
 import { GoogleMaps } from '../../shared/typescript-library/components';
 import { mapContext } from '../../contexts';

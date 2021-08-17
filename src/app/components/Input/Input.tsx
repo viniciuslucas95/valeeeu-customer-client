@@ -2,14 +2,16 @@ import React from 'react';
 
 import { theme } from '../../../configs/constants';
 import { Container } from './styles';
+import { Sizes } from '..';
 
 interface IProps {
   placeholder?: string;
+  size?: Sizes;
   isSecure?: boolean;
   style?: any;
 }
 
-export function Input({ placeholder, isSecure, style }: IProps) {
+export function Input({ placeholder, size, isSecure, style }: IProps) {
   return (
     <Container
       {...style}
@@ -17,6 +19,7 @@ export function Input({ placeholder, isSecure, style }: IProps) {
       placeholderTextColor={theme.mediumGray}
       selectionColor={theme.purple}
       secureTextEntry={isSecure}
+      size={size}
     ></Container>
   );
 }

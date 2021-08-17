@@ -2,9 +2,15 @@ import styled from 'styled-components/native';
 
 import { theme, sizes } from '../../../configs/constants';
 import { vhPx, vwPx } from '../../helpers/units';
+import { Sizes } from '../enums';
 
-export const Container = styled.TextInput`
-  width: ${sizes.elementMaxWidth};
+interface IProps {
+  size?: Sizes;
+}
+
+export const Container = styled.TextInput<IProps>`
+  width: ${({ size }) =>
+    size === Sizes.Medium ? sizes.elementMediumWidth : sizes.elementMaxWidth};
   height: ${sizes.elementHeight};
   border: ${sizes.border} solid ${theme.purple};
   border-radius: ${vwPx(10)};

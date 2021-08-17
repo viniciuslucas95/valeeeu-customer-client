@@ -14,8 +14,8 @@ import {
   SearchIcon,
   WorkIcon,
 } from '../../../assets/svgs/icons';
-import { TabScreens } from './enums';
-import { LoadingPage } from '..';
+import { TabScreens } from '../enums';
+import { LoadingPage } from '../';
 import { mapContext } from '../../contexts';
 
 const Tab = createBottomTabNavigator();

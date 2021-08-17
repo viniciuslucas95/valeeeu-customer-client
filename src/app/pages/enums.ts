@@ -6,9 +6,10 @@ export enum TabScreens {
 }
 
 export enum StackScreens {
-  Message = 'Message Page',
-  Profile = 'Profile Page',
   SearchPage = 'Search Page',
   SeeWorkerProfilePage = 'See Worker Profile Page',
   Work = 'Work Page',
+  Message = 'Message Page',
+  Profile = 'Profile Page',
+  CreateAccount = 'Create Account Page',
 }

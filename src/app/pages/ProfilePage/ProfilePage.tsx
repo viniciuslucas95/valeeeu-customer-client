@@ -13,8 +13,9 @@ import {
   useGoogleLoginApi,
 } from '../../shared/typescript-library/hooks/loginApis';
 import { apiConfig } from '../../../configs/constants';
+import { StackScreens } from '../enums';
 
-export function ProfilePage() {
+export function ProfilePage({ navigation }: any) {
   const {
     user: facebookUser,
     isFetchingData: isFacebookFetchingData,
@@ -40,8 +41,9 @@ export function ProfilePage() {
   return (
     <Container>
       <LogoSvg secondary />
+      <Separator style={{ marginTop: vh(2) }}>Entrar</Separator>
       <FacebookLoginButton
-        style={{ marginTop: vh(3) }}
+        style={{ marginTop: vh(1.5) }}
         isFetchingData={isFetchingData}
         fetchDataAsync={fetchFacebookDataAsync}
       />
@@ -62,9 +64,13 @@ export function ProfilePage() {
         </CheckBox>
         <Link>Recuperar senha</Link>
       </CheckBoxAndRecoverContainer>
-      <Button style={{ marginTop: vh(2) }}>Entrar</Button>
+      <Button style={{ marginTop: vh(1.5) }}>Entrar</Button>
       <Separator style={{ marginTop: vh(1.5) }}>Não tem conta?</Separator>
-      <Button style={{ marginTop: vh(1.5) }} secondary>
+      <Button
+        style={{ marginTop: vh(1.5) }}
+        secondary
+        onPress={() => navigation.navigate(StackScreens.CreateAccount)}
+      >
         Criar Conta
       </Button>
     </Container>

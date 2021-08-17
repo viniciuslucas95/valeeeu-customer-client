@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import { StackScreens } from '../enums';
+import { StackScreens } from '../../enums';
 import { SearchPage, SeeWorkerProfilePage } from '../..';
 
 const Stack = createStackNavigator();

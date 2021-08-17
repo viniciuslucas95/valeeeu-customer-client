@@ -11,7 +11,7 @@ interface IProps {
 }
 
 export function BackIcon({ fillColor, size, props }: IProps) {
-  const fixedSize = size ? size / 4 : vw(1) / 4;
+  const fixedSize = (size ?? vw(1)) / 5;
 
   return (
     <Svg
