@@ -1,2 +1,2 @@
-export { Logo } from './Logo';
-export { CheckBox } from './CheckBox';
+export { LogoSvg } from './LogoSvg';
+export { CheckBoxSvg } from './CheckBoxSvg';

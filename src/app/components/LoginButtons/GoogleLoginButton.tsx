@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import {
+  Container,
   TouchableContainer,
   TextContainer,
   Plataform,
@@ -13,36 +14,34 @@ import { IProps } from './interfaces';
 
 export function GoogleLoginButton({
   isFetchingData,
-  isPlataformFetchingData,
   fetchDataAsync,
   style,
 }: IProps) {
-  const [isPressed, setIsPressed] = useState(false);
+  const [isHighlighting, setIsHighlighting] = useState(false);
 
   return (
-    <TouchableContainer
-      onPressIn={() => {
-        if (!isFetchingData) setIsPressed(true);
-      }}
-      onPressOut={() => setIsPressed(false)}
-      onPress={() => {
-        if (isFetchingData) return;
+    <Container {...style}>
+      <TouchableContainer
+        onPressIn={() => setIsHighlighting(true)}
+        onPressOut={() => setIsHighlighting(false)}
+        onPress={() => {
+          if (isFetchingData) return;
 
-        fetchDataAsync();
-      }}
-    >
-      <ButtonContainer
-        {...style}
-        plataform={Plataform.Google}
-        highlight={isPressed || isPlataformFetchingData}
+          fetchDataAsync();
+        }}
       >
-        <IconContainer>
-          <GoogleIcon />
-        </IconContainer>
-        <TextContainer>
-          <Text>Entrar com o Google</Text>
-        </TextContainer>
-      </ButtonContainer>
-    </TouchableContainer>
+        <ButtonContainer
+          plataform={Plataform.Google}
+          highlight={isHighlighting}
+        >
+          <IconContainer>
+            <GoogleIcon />
+          </IconContainer>
+          <TextContainer>
+            <Text>Entrar com o Google</Text>
+          </TextContainer>
+        </ButtonContainer>
+      </TouchableContainer>
+    </Container>
   );
 }

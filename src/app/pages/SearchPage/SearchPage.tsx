@@ -34,14 +34,14 @@ export function SearchPage({ navigation }: any) {
               <Rect
                 width={sizes.border}
                 height='100%'
-                fill={theme.primaryPurple}
+                fill={theme.purple}
                 rx={sizes.border}
               />
             </Svg>
           </SeparatorContainer>
           <IconContainer>
             <SearchIcon
-              fillColor={theme.primaryPurple}
+              fillColor={theme.purple}
               strokeColor={theme.white}
               size={vw(0.75)}
             />

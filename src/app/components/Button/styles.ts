@@ -4,18 +4,31 @@ import { vhPx, vwPx } from '../../helpers/units';
 
 interface IProps {
   secondary?: boolean;
+  highlight?: boolean;
 }
+
+export const Container = styled.View``;
 
 export const TouchableContainer = styled.TouchableWithoutFeedback``;
 
-export const Container = styled.View<IProps>`
-  background-color: ${({ secondary }) =>
-    secondary ? theme.white : theme.primaryPurple};
+export const ButtonContainer = styled.View<IProps>`
+  background-color: ${({ secondary, highlight }) =>
+    secondary
+      ? highlight
+        ? theme.whiteHighlight
+        : theme.white
+      : highlight
+      ? theme.purpleHighlight
+      : theme.purple};
   width: ${sizes.elementMaxWidth};
   height: ${sizes.elementHeight};
   border-radius: ${vwPx(10)};
-  border-color: ${({ secondary }) =>
-    secondary ? theme.primaryPurple : theme.white};
+  border-color: ${({ secondary, highlight }) =>
+    secondary
+      ? highlight
+        ? theme.purpleHighlight
+        : theme.purple
+      : theme.white};
   border-width: ${({ secondary }) => (secondary ? sizes.border : 0)};
   padding: 0 ${vwPx(2)};
   justify-content: center;
@@ -26,6 +39,13 @@ export const Text = styled.Text<IProps>`
   position: relative;
   top: ${vhPx(0.2)};
   font-family: 'Poppins-Medium';
-  color: ${({ secondary }) => (secondary ? theme.primaryPurple : theme.white)};
+  color: ${({ secondary, highlight }) =>
+    secondary
+      ? highlight
+        ? theme.purpleHighlight
+        : theme.purple
+      : highlight
+      ? theme.whiteHighlight
+      : theme.white};
   text-transform: uppercase;
 `;

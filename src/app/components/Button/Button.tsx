@@ -1,6 +1,6 @@
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, useState } from 'react';
 
-import { TouchableContainer, Container, Text } from './styles';
+import { TouchableContainer, ButtonContainer, Text, Container } from './styles';
 
 interface IProps {
   secondary?: boolean;
@@ -12,11 +12,20 @@ export function Button({
   style,
   secondary,
 }: PropsWithChildren<IProps>) {
+  const [isHighlighting, setIsHighlighting] = useState(false);
+
   return (
-    <TouchableContainer>
-      <Container secondary={secondary} {...style}>
-        <Text secondary={secondary}>{children}</Text>
-      </Container>
-    </TouchableContainer>
+    <Container {...style}>
+      <TouchableContainer
+        onPressIn={() => setIsHighlighting(true)}
+        onPressOut={() => setIsHighlighting(false)}
+      >
+        <ButtonContainer secondary={secondary} highlight={isHighlighting}>
+          <Text secondary={secondary} highlight={isHighlighting}>
+            {children}
+          </Text>
+        </ButtonContainer>
+      </TouchableContainer>
+    </Container>
   );
 }

@@ -1,14 +1,29 @@
 import React, { PropsWithChildren } from 'react';
 
 import { TouchableContainer, Container, Text } from './styles';
-import { CheckBox as CheckBoxImage } from '../../../assets/svgs';
+import { CheckBoxSvg } from '../../../assets/svgs';
 
-export function CheckBox({ children }: PropsWithChildren<any>) {
+interface IProps {
+  setIsRememberingPassword?(value: boolean): void;
+  size?: number;
+  filled?: boolean;
+}
+
+export function CheckBox({
+  children,
+  setIsRememberingPassword,
+  size,
+  filled,
+}: PropsWithChildren<IProps>) {
   return (
-    <TouchableContainer>
+    <TouchableContainer
+      onPress={() => {
+        if (setIsRememberingPassword) setIsRememberingPassword(!filled);
+      }}
+    >
       <Container>
-        <CheckBoxImage />
-        <Text>{children}</Text>
+        <CheckBoxSvg filled={filled} size={size} />
+        <Text filled={filled}>{children}</Text>
       </Container>
     </TouchableContainer>
   );

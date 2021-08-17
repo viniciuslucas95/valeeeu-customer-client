@@ -10,13 +10,13 @@ export const Container = styled.View`
 `;
 
 export const Line = styled.View`
-  background-color: ${theme.primaryPurple};
+  background-color: ${theme.purple};
   height: 1px;
   flex: 1;
 `;
 
 export const Text = styled.Text`
   font-family: 'Poppins-Light';
-  color: ${theme.primaryPurple};
+  color: ${theme.purple};
   margin: 0 ${vwPx(3)};
 `;

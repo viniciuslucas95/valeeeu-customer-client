@@ -13,6 +13,8 @@ interface IProps {
   highlight?: boolean;
 }
 
+export const Container = styled.View``;
+
 export const TouchableContainer = styled.TouchableWithoutFeedback``;
 
 export const ButtonContainer = styled.View<IProps>`

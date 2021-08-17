@@ -27,8 +27,8 @@ export function TabNavigator() {
     <>
       <Tab.Navigator
         tabBarOptions={{
-          activeBackgroundColor: theme.primaryPurple,
-          inactiveBackgroundColor: theme.primaryPurple,
+          activeBackgroundColor: theme.purple,
+          inactiveBackgroundColor: theme.purple,
           showLabel: false,
         }}
         screenOptions={({ route }) => ({

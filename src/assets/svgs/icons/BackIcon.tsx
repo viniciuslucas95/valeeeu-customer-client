@@ -27,7 +27,7 @@ export function BackIcon({ fillColor, size, props }: IProps) {
         d={
           'M12.256 1.61a2 2 0 012.992.168l.652.826a2 2 0 01-.157 2.653l-7.329 7.329a2 2 0 000 2.828l7.33 7.33a2 2 0 01.156 2.652l-.652.826a2 2 0 01-2.992.169L1.39 15.406a2 2 0 010-2.812L12.256 1.609z'
         }
-        fill={fillColor ?? theme.primaryPurple}
+        fill={fillColor ?? theme.purple}
       />
     </Svg>
   );

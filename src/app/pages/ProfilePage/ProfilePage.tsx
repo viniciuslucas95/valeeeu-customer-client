@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { Logo } from '../../../assets/svgs';
+import { LogoSvg } from '../../../assets/svgs';
 import { Container, CheckBoxAndRecoverContainer } from '../ProfilePage/styles';
 import {
   FacebookLoginButton,
@@ -33,28 +33,33 @@ export function ProfilePage() {
     webClientId: apiConfig.googleWebId,
   });
 
+  const [isRememberingPassword, setIsRememberingPassword] = useState(false);
+
   const isFetchingData = isFacebookFetchingData || isGoogleFetchingData;
 
   return (
     <Container>
-      <Logo secondary />
+      <LogoSvg secondary />
       <FacebookLoginButton
         style={{ marginTop: vh(3) }}
         isFetchingData={isFetchingData}
-        isPlataformFetchingData={isFacebookFetchingData}
         fetchDataAsync={fetchFacebookDataAsync}
       />
       <GoogleLoginButton
         style={{ marginTop: vh(1) }}
         isFetchingData={isFetchingData}
-        isPlataformFetchingData={isGoogleFetchingData}
         fetchDataAsync={fetchGoogleDataAsync}
       />
       <Separator style={{ marginTop: vh(1.5) }}>ou</Separator>
       <Input style={{ marginTop: vh(1.5) }} placeholder='Email' />
-      <Input style={{ marginTop: vh(1) }} placeholder='Senha' />
+      <Input style={{ marginTop: vh(1) }} placeholder='Senha' isSecure={true} />
       <CheckBoxAndRecoverContainer style={{ marginTop: vh(1.5) }}>
-        <CheckBox>Lembrar senha</CheckBox>
+        <CheckBox
+          filled={isRememberingPassword}
+          setIsRememberingPassword={setIsRememberingPassword}
+        >
+          Lembrar senha
+        </CheckBox>
         <Link>Recuperar senha</Link>
       </CheckBoxAndRecoverContainer>
       <Button style={{ marginTop: vh(2) }}>Entrar</Button>

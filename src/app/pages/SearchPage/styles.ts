@@ -20,7 +20,7 @@ export const SearchContainer = styled.View`
   align-items: center;
   bottom: ${vhPx(5)};
   width: ${sizes.elementMaxWidth};
-  border: ${sizes.border} solid ${theme.primaryPurple};
+  border: ${sizes.border} solid ${theme.purple};
   border-radius: ${vwPx(10)};
   background-color: ${theme.white};
   padding: ${vwPx(2)} ${vwPx(4)};

@@ -5,15 +5,18 @@ import { Container } from './styles';
 
 interface IProps {
   placeholder?: string;
+  isSecure?: boolean;
   style?: any;
 }
 
-export function Input({ placeholder, style }: IProps) {
+export function Input({ placeholder, isSecure, style }: IProps) {
   return (
     <Container
       {...style}
       placeholder={placeholder}
       placeholderTextColor={theme.mediumGray}
+      selectionColor={theme.purple}
+      secureTextEntry={isSecure}
     ></Container>
   );
 }
