@@ -1,4 +1,4 @@
 export { SearchStackNavigator } from './SearchStackNavigator';
-export { WorkStackNavigator } from './WorkStackNavigator';
+export { ScheduleStackNavigator } from './ScheduleStackNavigator';
 export { MessageStackNavigator } from './MessageStackNavigator';
 export { ProfileStackNavigator } from './ProfileStackNavigator';

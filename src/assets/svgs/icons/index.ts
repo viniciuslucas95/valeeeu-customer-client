@@ -5,3 +5,4 @@ export { ProfileIcon } from './ProfileIcon';
 export { BackIcon } from './BackIcon';
 export { FacebookIcon } from './FacebookIcon';
 export { GoogleIcon } from './GoogleIcon';
+export { ScheduleIcon } from './ScheduleIcon';

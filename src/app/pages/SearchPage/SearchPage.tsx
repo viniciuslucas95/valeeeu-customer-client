@@ -12,7 +12,7 @@ import { vw } from '../../helpers/units';
 import { sizes, theme } from '../../../configs/constants';
 import { Rect, Svg } from 'react-native-svg';
 import { SearchIcon } from '../../../assets/svgs/icons';
-import { TabScreens } from '../enums';
+import { StackScreens } from '../enums';
 import { apiConfig } from '../../../configs/constants';
 import { GoogleMaps } from '../../shared/typescript-library/components';
 import { mapContext } from '../../contexts';
@@ -26,7 +26,9 @@ export function SearchPage({ navigation }: any) {
         apiKey={apiConfig.googleApiKey}
         mapLoadCallback={() => setIsLoaded(true)}
       />
-      <TouchableContainer onPress={() => navigation.navigate(TabScreens.Work)}>
+      <TouchableContainer
+        onPress={() => navigation.navigate(StackScreens.SeeWorkerProfilePage)}
+      >
         <SearchContainer>
           <Placeholder>Buscar serviço...</Placeholder>
           <SeparatorContainer>

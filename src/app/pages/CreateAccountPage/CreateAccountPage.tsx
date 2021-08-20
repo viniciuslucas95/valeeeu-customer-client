@@ -11,10 +11,8 @@ export function CreateAccountPage() {
     <Container>
       <LogoSvg secondary />
       <Separator style={{ marginTop: vh(2) }}>Criar conta</Separator>
-      <NameContainer style={{ marginTop: vh(1.5) }}>
-        <Input placeholder='Nome' size={Sizes.Medium} />
-        <Input placeholder='Sobrenome' size={Sizes.Medium} />
-      </NameContainer>
+      <Input style={{ marginTop: vh(1.5) }} placeholder='Nome' />
+      <Input style={{ marginTop: vh(1) }} placeholder='Sobrenome' />
       <Input style={{ marginTop: vh(1) }} placeholder='Email' />
       <Input style={{ marginTop: vh(1) }} placeholder='Senha' isSecure={true} />
       <Button style={{ marginTop: vh(1.5) }}>Criar conta</Button>

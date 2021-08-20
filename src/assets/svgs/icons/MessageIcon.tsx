@@ -11,7 +11,7 @@ interface IProps {
 }
 
 export function MessageIcon({ thick, size, props }: IProps) {
-  const fixedSize = size ? size / 4 : vw(1) / 4;
+  const fixedSize = (size ?? vw(1)) / 4;
 
   return (
     <Svg

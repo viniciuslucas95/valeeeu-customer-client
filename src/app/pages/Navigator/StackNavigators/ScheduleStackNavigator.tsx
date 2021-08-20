@@ -2,25 +2,20 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import { StackScreens } from '../../enums';
-import { SearchPage, SeeWorkerProfilePage } from '../..';
+import { SchedulePage } from '../..';
 import { Header } from '../../../components';
 
 const Stack = createStackNavigator();
 
-export function SearchStackNavigator() {
+export function ScheduleStackNavigator() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name={StackScreens.SearchPage}
-        component={SearchPage}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name={StackScreens.SeeWorkerProfilePage}
-        component={SeeWorkerProfilePage}
+        name={StackScreens.Schedule}
+        component={SchedulePage}
         options={{
           header: ({ navigation }) => (
-            <Header navigation={navigation}>Trabalhador</Header>
+            <Header navigation={navigation}>Agendamentos</Header>
           ),
         }}
       />

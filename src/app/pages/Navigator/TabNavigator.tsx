@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import {
   SearchStackNavigator,
-  WorkStackNavigator,
+  ScheduleStackNavigator,
   MessageStackNavigator,
   ProfileStackNavigator,
 } from './StackNavigators';
@@ -12,7 +12,7 @@ import {
   MessageIcon,
   ProfileIcon,
   SearchIcon,
-  WorkIcon,
+  ScheduleIcon,
 } from '../../../assets/svgs/icons';
 import { TabScreens } from '../enums';
 import { LoadingPage } from '../';
@@ -36,11 +36,11 @@ export function TabNavigator() {
             if (route.name === TabScreens.Search) {
               return focused ? <SearchIcon thick /> : <SearchIcon />;
             }
-            if (route.name === TabScreens.Work) {
-              return focused ? <WorkIcon thick /> : <WorkIcon />;
-            }
             if (route.name === TabScreens.Message) {
               return focused ? <MessageIcon thick /> : <MessageIcon />;
+            }
+            if (route.name === TabScreens.Schedule) {
+              return focused ? <ScheduleIcon thick /> : <ScheduleIcon />;
             }
             if (route.name === TabScreens.Profile) {
               return focused ? <ProfileIcon thick /> : <ProfileIcon />;
@@ -49,11 +49,15 @@ export function TabNavigator() {
         })}
       >
         <Tab.Screen name={TabScreens.Search} component={SearchStackNavigator} />
-        <Tab.Screen name={TabScreens.Work} component={WorkStackNavigator} />
         <Tab.Screen
           name={TabScreens.Message}
           component={MessageStackNavigator}
           options={{ tabBarBadge: 3 }}
+        />
+        <Tab.Screen
+          name={TabScreens.Schedule}
+          component={ScheduleStackNavigator}
+          options={{ tabBarBadge: 1 }}
         />
         <Tab.Screen
           name={TabScreens.Profile}

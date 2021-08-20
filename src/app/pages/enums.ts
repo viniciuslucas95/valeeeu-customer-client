@@ -1,6 +1,6 @@
 export enum TabScreens {
   Search = 'Search Stack',
-  Work = 'Work Stack',
+  Schedule = 'Schedule Stack',
   Message = 'Message Stack',
   Profile = 'Profile Stack',
 }
@@ -8,7 +8,7 @@ export enum TabScreens {
 export enum StackScreens {
   SearchPage = 'Search Page',
   SeeWorkerProfilePage = 'See Worker Profile Page',
-  Work = 'Work Page',
+  Schedule = 'Schedule Page',
   Message = 'Message Page',
   Profile = 'Profile Page',
   CreateAccount = 'Create Account Page',

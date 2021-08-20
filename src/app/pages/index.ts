@@ -1,6 +1,6 @@
 export { SearchPage } from './SearchPage';
 export { SeeWorkerProfilePage } from './SeeWorkerProfilePage';
-export { WorkPage } from './WorkPage';
+export { SchedulePage } from './SchedulePage';
 export { MessagePage } from './MessagePage';
 export { ProfilePage } from './ProfilePage';
 export { LoadingPage } from './LoadingPage';
