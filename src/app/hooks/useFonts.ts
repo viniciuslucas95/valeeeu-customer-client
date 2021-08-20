@@ -2,7 +2,6 @@ import { useFonts as useFontsExpo } from 'expo-font';
 
 export function useFonts() {
   const [isLoaded] = useFontsExpo({
-    'FugazOne-Regular': require('../../assets/fonts/FugazOne-Regular.ttf'),
     'Poppins-Light': require('../../assets/fonts/Poppins-Light.ttf'),
     'Poppins-Regular': require('../../assets/fonts/Poppins-Regular.ttf'),
     'Poppins-Medium': require('../../assets/fonts/Poppins-Medium.ttf'),
