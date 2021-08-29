@@ -1,11 +1,17 @@
 {
   "expo": {
     "name": "Valeeeu!",
-    "slug": "valeeeu",
+    "slug": "Valeeeu",
     "version": "1.0.0",
     "orientation": "portrait",
     "scheme": "com.viniciuslucas95.valeeeu",
     "facebookScheme": "fb475115013540188",
+    "icon": "./src/shared/assets/images/icon.png",
+    "splash": {
+      "image": "./src/shared/assets/images/icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#834FD9"
+    },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
@@ -16,10 +22,9 @@
     },
     "android": {
       "package": "com.viniciuslucas95.valeeeu",
-      "config": {
-        "googleMaps": {
-          "apiKey": "AIzaSyAvOEQE_f6VB8oeendmD4yLsOqGBzgDIBQ"
-        }
+      "adaptiveIcon": {
+        "foregroundImage": "./src/shared/assets/images/adaptive-icon.png",
+        "backgroundColor": "#834FD9"
       }
     }
   }
