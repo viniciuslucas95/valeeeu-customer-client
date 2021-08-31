@@ -7,10 +7,9 @@ import {
   LightText,
   MediumText,
   SemiBoldText,
-} from '../../../../../shared/app/pages/styledComponents/Texts';
+} from '../../../../../shared/app/styledComponents/Texts';
 import { colors } from '../../../../../shared/configs';
-import { Sizes } from '../../../../../shared/app/pages/components/enums';
-import { FlexDistribution } from '../../../../../shared/app/pages/enums';
+import { FlexDistribution, Sizes } from '../../../../../shared/app/enums';
 
 const googlePlayImage = require('../../../../../assets/images/google-play-badge.png');
 

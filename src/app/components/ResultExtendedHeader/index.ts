@@ -1,0 +1,1 @@
+export { ResultExtendedHeader } from './ResultExtendedHeader';

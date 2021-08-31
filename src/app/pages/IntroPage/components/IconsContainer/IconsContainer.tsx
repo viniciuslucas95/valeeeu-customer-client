@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from 'react';
-import { IStyleable } from '../../../../../shared/app/pages/components/interfaces';
-import { FlexDistribution } from '../../../../../shared/app/pages/enums';
+import { FlexDistribution } from '../../../../../shared/app/enums';
+import { IStyleable } from '../../../../../shared/app/interfaces';
 import { Container } from './styles';
 
 interface IProps extends IStyleable {
