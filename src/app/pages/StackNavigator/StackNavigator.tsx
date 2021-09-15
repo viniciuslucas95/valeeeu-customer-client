@@ -15,13 +15,13 @@ import {
 } from '../../../shared/app/components/Header/HeaderButtons';
 import { IntroPage } from '../IntroPage';
 import { MainScreens } from '../../enums';
-import { ButtonsContainer } from '../ResultPage/components/PictureSection/styles';
 import { Header } from '../../../shared/app/components';
 import { ResultPage } from '../ResultPage';
 import { FakeInputButton, ResultExtendedHeader } from '../../components';
-import { Sizes } from '../../../shared/app/enums';
+import { FlexDistribution, Sizes } from '../../../shared/app/enums';
 import { loginContext } from '../../../shared/app/contexts';
 import { LoginStack } from '../../../shared/app/pages/StackNavigators';
+import { HorizontalContainer } from '../../../shared/app/components/HorizontalContainer';
 
 const { vw } = Unit;
 const Stack = createStackNavigator();
@@ -44,11 +44,13 @@ export function StackNavigator() {
                 <Header
                   leftSide={<LogoSvg size={vw(0.4)} color={colors.white} />}
                   rightSide={
-                    <ButtonsContainer>
+                    <HorizontalContainer
+                      flexDistribution={FlexDistribution.spaceBetween}
+                    >
                       <MessageButton navigation={navigation} />
                       <ScheduleButton navigation={navigation} />
                       <MenuButton navigation={navigation} />
-                    </ButtonsContainer>
+                    </HorizontalContainer>
                   }
                 />
               ),
@@ -76,11 +78,13 @@ export function StackNavigator() {
                     </>
                   }
                   rightSide={
-                    <ButtonsContainer>
+                    <HorizontalContainer
+                      flexDistribution={FlexDistribution.spaceBetween}
+                    >
                       <MessageButton navigation={navigation} />
                       <ScheduleButton navigation={navigation} />
                       <MenuButton navigation={navigation} />
-                    </ButtonsContainer>
+                    </HorizontalContainer>
                   }
                 />
               ),
